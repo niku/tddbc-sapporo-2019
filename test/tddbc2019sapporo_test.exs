@@ -33,4 +33,16 @@ defmodule Tddbc2019sapporoTest do
       assert ClosedRange.stringify(3) == :error
     end
   end
+
+  describe "閉区間が指定の値を含むか否か判定できる" do
+    test "閉区間[3,8]に5を与えるとcontainsはtrueを返す" do
+      closed_range = ClosedRange.new(3, 8)
+      assert ClosedRange.contains(closed_range, 5) == true
+    end
+
+    test "閉区間[3,8]に10与えるとcontainsはfalseを返す" do
+      closed_range = ClosedRange.new(3, 8)
+      assert ClosedRange.contains(closed_range, 10) == false
+    end
+  end
 end
