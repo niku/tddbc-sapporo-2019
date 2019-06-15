@@ -1,5 +1,12 @@
 defmodule Tddbc2019sapporoTest do
   use ExUnit.Case
+  import ClosedRange
+
+  describe("~x([x,y]) でClosedRangeを生成できる") do
+    test "~x([3,5]) のとき、下端点が3、上端点が5のClosedRangeを生成する" do
+      assert ~x([3,5]) = ClosedRange.new(3, 5)
+    end
+  end
 
   describe "下端点はlower_pointで取得できる" do
     test "下端点が3のとき、3が取得できる" do

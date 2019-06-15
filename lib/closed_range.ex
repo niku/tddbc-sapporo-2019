@@ -1,6 +1,21 @@
 defmodule ClosedRange do
   defstruct [:lower, :upper]
 
+  defmacro sigil_x({:<<>>, _meta, [string]}, _modifiers) do
+    do_sigil_x(string)
+    |> Macro.escape()
+  end
+
+  defp do_sigil_x(string) do
+    %{"lower" => lower_string, "upper" => upper_string} =
+      Regex.named_captures(~r/\[\s*(?<lower>\d+)\s*,\s*(?<upper>\d+)\s*\]/, string)
+
+    lower = String.to_integer(lower_string)
+    upper = String.to_integer(upper_string)
+    new(lower, upper)
+  end
+
+  @spec new(any, any) :: :error | %{:__struct__ => atom, optional(atom) => any}
   def new(lower, upper) when lower <= upper do
     struct!(ClosedRange, lower: lower, upper: upper)
   end
