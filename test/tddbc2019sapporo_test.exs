@@ -17,7 +17,7 @@ defmodule Tddbc2019sapporoTest do
     end
   end
 
-  describe "上端点はlower_pointで取得できる" do
+  describe "上端点はupper_pointで取得できる" do
     test "上端点が3のとき、3が取得できる" do
       closed_range = ClosedRange.new(1, 3)
       assert ClosedRange.upper_point(closed_range) == {:ok, 3}
