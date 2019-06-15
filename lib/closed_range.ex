@@ -33,4 +33,13 @@ defmodule ClosedRange do
     do: true
 
   def contain?(_, _), do: false
+
+  def equal?(%ClosedRange{lower: lower1, upper: upper1}, %ClosedRange{
+        lower: lower2,
+        upper: upper2
+      })
+      when lower1 == lower2 and upper1 == upper2,
+      do: true
+
+  def equal?(_, _), do: false
 end

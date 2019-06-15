@@ -45,4 +45,24 @@ defmodule Tddbc2019sapporoTest do
       assert ClosedRange.contain?(closed_range, 10) == false
     end
   end
+
+  describe "別の閉区間と等価か判定できる" do
+    test "閉区間[3,8]と閉区間[3,8]をequal?で比べるとtrueを返す" do
+      closed_range1 = ClosedRange.new(3, 8)
+      closed_range2 = ClosedRange.new(3, 8)
+      assert ClosedRange.equal?(closed_range1, closed_range2) == true
+    end
+
+    test "閉区間[3,8]と閉区間[3,9]をequal?で比べるとfalseを返す" do
+      closed_range1 = ClosedRange.new(3, 8)
+      closed_range2 = ClosedRange.new(3, 9)
+      assert ClosedRange.equal?(closed_range1, closed_range2) == false
+    end
+
+    test "閉区間[3,8]と閉区間でないものをequal?で比べるとfalseを返す" do
+      closed_range1 = ClosedRange.new(3, 8)
+      not_closed_range2 = 9
+      assert ClosedRange.equal?(closed_range1, not_closed_range2) == false
+    end
+  end
 end
