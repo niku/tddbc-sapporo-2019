@@ -79,4 +79,10 @@ defmodule Tddbc2019sapporoTest do
       assert ClosedRange.subset?(closed_range1, closed_range2) == false
     end
   end
+
+  describe "上端点より下端点が大きい閉区間を作ることはできない" do
+    test "下端点に6、上端点に5を与えると:errorを返す" do
+      assert ClosedRange.new(6, 5) == :error
+    end
+  end
 end

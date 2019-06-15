@@ -1,9 +1,11 @@
 defmodule ClosedRange do
   defstruct [:lower, :upper]
 
-  def new(lower, upper) do
+  def new(lower, upper) when lower <= upper do
     struct!(ClosedRange, lower: lower, upper: upper)
   end
+
+  def new(_, _), do: :error
 
   def lower_point(%ClosedRange{lower: lower}) do
     {:ok, lower}
