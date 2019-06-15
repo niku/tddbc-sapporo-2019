@@ -5,7 +5,7 @@ defmodule ClosedRange do
     struct!(ClosedRange, lower: lower, upper: upper)
   end
 
-  def lower_point(%ClosedRange{lower: lower} = _closed_range) do
+  def lower_point(%ClosedRange{lower: lower}) do
     {:ok, lower}
   end
 
@@ -13,7 +13,7 @@ defmodule ClosedRange do
     :error
   end
 
-  def upper_point(%ClosedRange{upper: upper} = _closed_range) do
+  def upper_point(%ClosedRange{upper: upper}) do
     {:ok, upper}
   end
 
