@@ -35,14 +35,14 @@ defmodule Tddbc2019sapporoTest do
   end
 
   describe "閉区間が指定の値を含むか否か判定できる" do
-    test "閉区間[3,8]に5を与えるとcontain?はtrueを返す" do
+    test "閉区間[3,8]に5を与えるとinclude?はtrueを返す" do
       closed_range = ClosedRange.new(3, 8)
-      assert ClosedRange.contain?(closed_range, 5) == true
+      assert ClosedRange.include?(closed_range, 5) == true
     end
 
-    test "閉区間[3,8]に10与えるとcontain?はfalseを返す" do
+    test "閉区間[3,8]に10与えるとinclude?はfalseを返す" do
       closed_range = ClosedRange.new(3, 8)
-      assert ClosedRange.contain?(closed_range, 10) == false
+      assert ClosedRange.include?(closed_range, 10) == false
     end
   end
 
