@@ -29,9 +29,8 @@ defmodule Tddbc2019sapporoTest do
       assert ClosedRange.stringify(closed_range) == "[3,8]"
     end
 
-    test "下端点が7、上端点20の時、stringifyは[7,20]を返す" do
-      closed_range = ClosedRange.new(7, 20)
-      assert ClosedRange.stringify(closed_range) == "[7,20]"
+    test "ClosedRange以外の値が与えられた時stringifyはエラーを返す" do
+      assert ClosedRange.stringify(3) == :error
     end
   end
 end

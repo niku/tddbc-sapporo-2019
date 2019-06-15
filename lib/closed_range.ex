@@ -24,4 +24,8 @@ defmodule ClosedRange do
   def stringify(%ClosedRange{lower: lower, upper: upper}) do
     "[#{lower},#{upper}]"
   end
+
+  def stringify(_closed_range) do
+    :error
+  end
 end
