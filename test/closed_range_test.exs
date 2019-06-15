@@ -1,4 +1,4 @@
-defmodule Tddbc2019sapporoTest do
+defmodule ClosedRangeTest do
   use ExUnit.Case
   import ClosedRange
 
