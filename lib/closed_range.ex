@@ -29,8 +29,8 @@ defmodule ClosedRange do
     :error
   end
 
-  def contains(%ClosedRange{lower: lower, upper: upper}, num) when lower <= num and num <= upper,
+  def contain?(%ClosedRange{lower: lower, upper: upper}, num) when lower <= num and num <= upper,
     do: true
 
-  def contains(_, _), do: false
+  def contain?(_, _), do: false
 end
