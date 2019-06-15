@@ -6,6 +6,6 @@ defmodule ClosedRange do
   end
 
   def lower_point(closed_range) do
-    3
+    closed_range.lower
   end
 end
