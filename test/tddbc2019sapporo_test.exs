@@ -16,5 +16,9 @@ defmodule Tddbc2019sapporoTest do
       closed_range = ClosedRange.new(5, 10)
       assert ClosedRange.lower_point(closed_range) == {:ok, 5}
     end
+
+    test "ClosedRange以外の値が与えられた時lower_pointはエラーを返す" do
+      assert ClosedRange.lower_point(5) == :error
+    end
   end
 end
