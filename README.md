@@ -1,21 +1,9 @@
 # Tddbc2019sapporo
 
-**TODO: Add description**
+[TDDBC札幌2019](https://agilesapporo.doorkeeper.jp/events/92201)の[課題](https://gist.github.com/twada/75fb219c8cc180e9de166d8a58e877b0)をElixirチームで練習したリポジトリ。
 
-## Installation
+# テスト
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `tddbc2019sapporo` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:tddbc2019sapporo, "~> 0.1.0"}
-  ]
-end
+```sh
+$ mix test --trace
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/tddbc2019sapporo](https://hexdocs.pm/tddbc2019sapporo).
-
