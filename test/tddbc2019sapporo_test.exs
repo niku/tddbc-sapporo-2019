@@ -12,11 +12,6 @@ defmodule Tddbc2019sapporoTest do
       assert ClosedRange.lower_point(closed_range) == {:ok, 3}
     end
 
-    test "下端点が5のとき、5が取得できる" do
-      closed_range = ClosedRange.new(5, 10)
-      assert ClosedRange.lower_point(closed_range) == {:ok, 5}
-    end
-
     test "ClosedRange以外の値が与えられた時lower_pointはエラーを返す" do
       assert ClosedRange.lower_point(5) == :error
     end
@@ -26,11 +21,6 @@ defmodule Tddbc2019sapporoTest do
     test "上端点が3のとき、3が取得できる" do
       closed_range = ClosedRange.new(1, 3)
       assert ClosedRange.upper_point(closed_range) == {:ok, 3}
-    end
-
-    test "上端点が5のとき、5が取得できる" do
-      closed_range = ClosedRange.new(1, 5)
-      assert ClosedRange.upper_point(closed_range) == {:ok, 5}
     end
 
     test "ClosedRange以外の値が与えられた時upper_pointはエラーを返す" do
