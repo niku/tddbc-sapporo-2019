@@ -27,4 +27,16 @@ defmodule Tddbc2019sapporoTest do
       assert ClosedRange.upper_point(5) == :error
     end
   end
+
+  describe "閉区間を文字列で取得できる" do
+    test "下端点が3、上端点8の時、stringifyは[3,8]を返す" do
+      closed_range = ClosedRange.new(3, 8)
+      assert ClosedRange.stringify(closed_range) == "[3,8]"
+    end
+
+    test "下端点が7、上端点20の時、stringifyは[7,20]を返す" do
+      closed_range = ClosedRange.new(7, 20)
+      assert ClosedRange.stringify(closed_range) == "[7,20]"
+    end
+  end
 end

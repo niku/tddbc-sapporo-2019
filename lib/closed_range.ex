@@ -20,4 +20,8 @@ defmodule ClosedRange do
   def upper_point(_closed_range) do
     :error
   end
+
+  def stringify(%ClosedRange{lower: lower, upper: upper}) do
+    "[#{lower},#{upper}]"
+  end
 end
