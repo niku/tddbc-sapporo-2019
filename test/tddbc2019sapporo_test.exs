@@ -65,4 +65,18 @@ defmodule Tddbc2019sapporoTest do
       assert ClosedRange.equal?(closed_range1, not_closed_range2) == false
     end
   end
+
+  describe "別の閉区間を完全に含むか判定できる" do
+    test "閉区間[3,8]と閉区間[4,7]を与えるとsubet?はtrueを返す" do
+      closed_range1 = ClosedRange.new(3, 8)
+      closed_range2 = ClosedRange.new(4, 7)
+      assert ClosedRange.subset?(closed_range1, closed_range2) == true
+    end
+
+    test "閉区間[3,8]と閉区間[4,7]を与えるとsubet?はfalseを返す" do
+      closed_range1 = ClosedRange.new(3, 8)
+      closed_range2 = ClosedRange.new(4, 9)
+      assert ClosedRange.subset?(closed_range1, closed_range2) == false
+    end
+  end
 end

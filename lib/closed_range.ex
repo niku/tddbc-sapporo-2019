@@ -42,4 +42,13 @@ defmodule ClosedRange do
       do: true
 
   def equal?(_, _), do: false
+
+  def subset?(%ClosedRange{lower: lower1, upper: upper1}, %ClosedRange{
+        lower: lower2,
+        upper: upper2
+      })
+      when lower1 <= lower2 and upper2 <= upper1,
+      do: true
+
+  def subset?(_, _), do: false
 end
